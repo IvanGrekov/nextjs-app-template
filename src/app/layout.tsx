@@ -8,6 +8,10 @@ import { Inter } from 'next/font/google';
 import styles from 'app/layout.module.scss';
 import Providers from 'app/providers';
 import ErrorBoundary from 'components/error-boundary/ErrorBoundary';
+import Header from 'components/header/Header';
+import NetworkStatusIndicator from 'components/network-status-indicator/NetworkStatusIndicator';
+import Notifications from 'components/notifications/Notifications';
+import ScrollTopButton from 'components/scroll-top-button/ScrollTopButton';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,11 +30,27 @@ export default function RootLayout({
             <body className={inter.className}>
                 <ErrorBoundary>
                     <Providers>
-                        <main className={cx(styles.main)}>{children}</main>
+                        <Header />
+
+                        <main
+                            className={cx(
+                                styles.main,
+                                styles['header-spacing'],
+                            )}
+                        >
+                            {children}
+                        </main>
+
+                        <Notifications />
+
+                        <NetworkStatusIndicator />
+
+                        <ScrollTopButton />
                     </Providers>
 
                     <div id="modal-root" />
                     <div id="drawer-root" />
+                    <div id="notifications-root" />
                 </ErrorBoundary>
             </body>
         </html>

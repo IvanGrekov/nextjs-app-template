@@ -10,7 +10,6 @@ export default function MoonIcon({
         <IconWrapper size={size} className={wrapperClassName}>
             <svg
                 width="64"
-                version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
                 height="64"
                 viewBox="0 0 64 64"

@@ -8,7 +8,7 @@ interface IEmptyStateProps {
     text?: string;
 }
 
-const iconSize = 150;
+const ICON_SIZE = 150;
 
 export default function EmptyState({
     isError,
@@ -23,10 +23,13 @@ export default function EmptyState({
         <section className={styles['empty-state']}>
             <div className={styles['icon-wrapper']}>
                 {isError ? (
-                    <ErrorIcon size={iconSize} className={colorClassName} />
+                    <ErrorIcon size={ICON_SIZE} className={colorClassName} />
                 ) : (
                     <>
-                        <EmptyIcon size={iconSize} className={colorClassName} />
+                        <EmptyIcon
+                            size={ICON_SIZE}
+                            className={colorClassName}
+                        />
                     </>
                 )}
             </div>

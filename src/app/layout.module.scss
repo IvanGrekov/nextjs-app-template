@@ -1,1 +1,9 @@
-// Add layout styles here
+@import 'styles/extends.scss';
+
+.header-spacing {
+    @extend .header-spacing-extend;
+}
+
+.sidebar-layout {
+    @extend .sidebar-layout-extend;
+}
