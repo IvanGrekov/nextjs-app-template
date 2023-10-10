@@ -37,7 +37,7 @@ module.exports = {
         'no-console':
             process.env.NODE_ENV === 'production'
                 ? ['error', { allow: ['warn', 'error'] }]
-                : ['warn', { allow: ['warn', 'error'] }],
+                : ['warn', { allow: ['warn', 'error', 'log'] }],
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/no-explicit-any':
             process.env.NODE_ENV === 'production' ? 'error' : 'warn',
@@ -60,7 +60,14 @@ module.exports = {
         'import/order': [
             'error',
             {
-                groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+                groups: [
+                    'builtin',
+                    'external',
+                    'internal',
+                    'parent',
+                    'sibling',
+                    'index',
+                ],
                 pathGroups: [
                     {
                         pattern: 'react*',
@@ -109,7 +116,7 @@ module.exports = {
                 semi: true,
                 trailingComma: 'all',
                 singleQuote: true,
-                printWidth: 100,
+                printWidth: 80,
                 tabWidth: 4,
             },
         ],

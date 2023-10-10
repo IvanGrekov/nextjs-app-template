@@ -5,6 +5,9 @@ const nextConfig = {
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },
-}
+    redirects: async () => {
+        return [];
+    },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
